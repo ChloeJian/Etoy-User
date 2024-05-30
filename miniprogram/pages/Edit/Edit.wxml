@@ -1,0 +1,27 @@
+<form bindsubmit="formSubmit">  
+  <view class="form-row">  
+    <label for="user_name">姓名</label>  
+    <input type="text" name="user_name" value="{{user.user_name}}"></input>  
+  </view>  
+  <view class="form-row">  
+    <label for="user_sex">性别</label>  
+    <input type="text" name="user_sex" value="{{user.user_sex}}"></input>  
+  </view>  
+  <view class="form-row">  
+    <label for="user_idcard">身份证号</label>  
+    <input type="text" name="user_idcard" value="{{user.user_idcard}}"></input>  
+  </view>  
+  <view class="form-row">  
+    <label for="user_birth">生日</label>
+    <input type="text" name="user_birth" value="{{user.user_birth}}"></input>  
+  </view>  
+  <view class="form-row">  
+    <label for="user_tel">联系电话</label>
+    <input type="text" name="user_tel" value="{{user.user_tel}}"></input>  
+  </view>  
+  <view class="form-row">  
+    <label for="user_play">借玩次数</label>  
+    <input type="text" name="user_play" value="{{user.user_play}}" disabled></input>  
+  </view>  
+  <button form-type="submit" type="primary">保存修改</button>  
+</form>

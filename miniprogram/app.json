@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/first/first",
+    "pages/all/all",
+    "pages/apply/apply",
+    "pages/user/user",
+    "pages/toyDetail/toyDetail",
+    "pages/Edit/Edit",
+    "pages/myCollect/myCollect",
+    "pages/myBR/myBR",
+    "pages/myComment/myComment"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#E54867",
+    "navigationBarTitleText": "益玩村",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#E54847",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/first/first",
+        "iconPath": "images/first.png",
+        "selectedIconPath": "images/first_active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/all/all",
+        "iconPath": "images/all.png",
+        "selectedIconPath": "images/all_active.png",
+        "text": "玩具大全"
+      },
+      {
+        "pagePath": "pages/apply/apply",
+        "iconPath": "images/apply.png",
+        "selectedIconPath": "images/apply_active.png",
+        "text": "申请中心"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_active.png",
+        "text": "个人天地"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

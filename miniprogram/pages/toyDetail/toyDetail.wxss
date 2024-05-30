@@ -1,0 +1,150 @@
+/* 图片容器样式 */
+.imageBox {
+  text-align: center; /* 图片水平居中 */
+  margin: 8rpx;
+  padding: 8rpx;
+  border-radius: 8rpx;
+  background-color: white;
+  border: 1rpx solid #efefef;
+  box-shadow: 1rpx 1rpx 15rpx #ddd;
+}
+
+/* 图片样式 */
+.imageBox image {
+  height: 400rpx; /* 图片高度 */
+  border-radius: 8rpx;
+}
+
+/* 详细信息容器样式 */
+.detailBox {
+  background-color: white;
+  border: 1rpx solid #efefef;
+  border-radius: 8rpx;
+  box-shadow: 1rpx 1rpx 15rpx #ddd;
+  margin: 10rpx;
+  padding: 20rpx 40rpx;
+}
+
+.cardTitle{
+  margin-bottom: 25rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #000000;
+}
+
+.cardInfo{
+  margin-bottom: 8px;
+  font-size: 35rpx;
+  color: #333;
+}
+
+.btnBox {
+  position: fixed;  
+  bottom: 0; 
+  width: 100%;
+  border: 1rpx solid #efefef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+} 
+
+.btnBoxIn {
+  width: 100%;
+  height: 100%;
+  border: 1rpx solid #efefef;
+  background-color: white;
+}
+
+.btnBorrow {
+  color:#1AAD19;
+}
+
+.btnReturn{
+  color:#3e86a0;
+}
+
+/* 基础样式 */  
+.commentBox {  
+  margin: 8rpx;
+  border-radius: 8rpx;
+  border: 1rpx solid #efefef;
+  box-shadow: 1rpx 1rpx 15rpx #ddd;
+} 
+
+.commentItem {
+  height: 175rpx;
+  width: 100%;
+  padding: 15rpx;
+  margin-bottom: 5rpx;
+  background-color: #fff; 
+  border-radius: 8rpx;  
+}
+  
+/* 用户标题样式 */  
+.userTitle {  
+  font-size: 35rpx;  
+  font-weight: bold;  
+  color: #333;  
+  margin-bottom: 5rpx;  
+}  
+  
+/* 时间信息样式 */  
+.timeInfo {  
+  font-size: 28rpx;  
+  font-weight: normal;
+  color: #888;  
+  margin-bottom: 15rpx;  
+}  
+  
+/* 评论内容样式 */  
+.commentInfo {  
+  font-size: 32rpx;  
+  color: #666;  
+  line-height: 1.5;  
+  word-wrap: break-word; /* 防止内容过长不换行 */  
+  margin-bottom: 10rpx;  
+}  
+
+/* 评论表单样式 */  
+.commentForm {  
+  position: fixed;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  display: flex;  
+  align-items: center;  
+  justify-content: space-between;  
+  padding: 20rpx;  
+  background-color: #fff;  
+  box-shadow: 0 -3rpx 6rpx rgba(0, 0, 0, 0.1);  
+}  
+  
+/* 输入框样式 */  
+.commentForm input {  
+  flex: 1; /* 让 input 占据除了 button 以外的剩余空间 */  
+  height: 60rpx;
+  width: 550rpx;  
+  padding: 0 20rpx;  
+  border: 1rpx solid #ccc;  
+  border-radius: 5rpx;  
+  box-sizing: border-box;  
+}  
+  
+/* 按钮样式 */  
+.commentForm button {  
+  height: 60rpx;  
+  line-height: 60rpx;  
+  padding: 0 30rpx;  
+  background-color: #6daf5c;  
+  color: #fff;  
+  border: none;  
+  border-radius: 10rpx;  
+  font-size: 28rpx;  
+}  
+  
+/* 当页面内容较少时，确保commentForm不遮挡内容 */  
+page {  
+  padding-bottom: 60px; /* 根据表单高度设置 */  
+}
+

@@ -1,0 +1,67 @@
+<view class="search-bar">
+  <!-- 搜索栏组件 -->
+  <van-search
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  show-action
+  bind:search="onSearch"
+  bind:cancel="onCancel"/>
+</view>
+
+<view class="swiper-box">
+    <swiper  indicator-dots="true" autoplay="true" interval="3000" circular="true">
+      <swiper-item bindtap="goToSwiperDetail1">
+        <navigator class="swiper-item">
+          <image src=""></image>
+        </navigator>
+      </swiper-item>
+      
+      <swiper-item bindtap="goToSwiperDetail2">
+        <navigator class="swiper-item">
+          <image src=""></image>
+        </navigator>
+      </swiper-item>
+      
+      <swiper-item bindtap="goToSwiperDetail3">
+        <navigator class="swiper-item">
+          <image src=""></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+
+<view class="nav-bar">
+  <!-- 导航栏组件 -->
+  <van-tabs bind:change="onChange">
+    <van-tab title="全部" name="All"></van-tab>
+    <van-tab title="最热" name="Hot"></van-tab>
+    <van-tab title="最新" name="New"></van-tab>
+</van-tabs>
+</view>
+
+<view class="list">
+  <scroll-view class="toyMain" style="height: 700rpx;" scroll-y="true">
+
+<view class="toyItem"  wx:for="{{toyList}}" wx:key="{{index}}">
+
+  <view class="toyImage">
+  <image src="{{item.toy_picurl}}"></image>
+  </view>
+  
+  <view class="toyMsg">
+    <view class="toyMsgItem itemTitle">{{item.toy_name}}  
+    <van-tag plain type="primary">{{item.cate_name}}</van-tag>
+    </view>
+    <view class="toyMsgItem">{{item.toy_des}}</view>
+    <view class="toyMsgItem">
+      <button class="cardButton" bindtap="gotoDetail" size="mini" data-t_id="{{item._id}}">
+      进入详情>>
+      </button>
+    </view>
+  </view>
+
+</view>
+
+</scroll-view>
+</view>
+

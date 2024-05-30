@@ -1,0 +1,35 @@
+<view class="nav-bar">
+  <!-- 导航栏组件 -->
+  <van-tabs bind:change="onChange">
+    <van-tab title="借玩中" name="Borrow"></van-tab>
+    <van-tab title="已退玩" name="Return"></van-tab>
+    <van-tab title="全部借还" name="BR"></van-tab>
+</van-tabs>
+</view>
+
+<view class="list">
+  <scroll-view class="toyMain" style="height: 100%;" scroll-y="true">
+
+<view class="toyItem"  wx:for="{{toyList}}" wx:key="{{index}}">
+
+  <view class="toyImage">
+  <image src="{{item.toy_picurl}}"></image>
+  </view>
+  
+  <view class="toyMsg">
+    <view class="toyMsgItem itemTitle">{{item.toy_name}}  
+    <van-tag plain type="primary">{{item.cate_name}}</van-tag>
+    </view>
+    <view class="toyMsgItem">{{item.toy_des}}</view>
+    <view class="toyMsgItem">
+      <button class="cardButton" bindtap="gotoDetail" size="mini" data-t_id="{{item._id}}">
+      进入详情>>
+      </button>
+    </view>
+  </view>
+
+</view>
+
+</scroll-view>
+</view>
+

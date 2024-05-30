@@ -1,0 +1,38 @@
+/* 图片容器样式 */
+.userBox {
+  height: 485rpx;
+}
+
+.userBox > image {
+  position:absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.userName {
+  height: 300rpx;
+  padding-top: 40rpx;
+  line-height: 300rpx;
+  text-align: center;
+  font-size: 60rpx;
+  font-weight: bold;
+  color: black;
+  /* text-shadow: 6rpx 6rpx 10rpx rgba(0, 0, 0, 100);  */
+}  
+
+.userMsg {
+  text-align: center;
+  font-size: 35rpx;
+  color: rgb(53, 52, 52);
+  /* text-shadow: 2rpx 2rpx 4rpx rgba(0, 0, 0, 100);  */
+}  
+
+.functionBox {
+  background-color: white;
+  border: 1rpx solid #efefef;
+  border-radius: 8rpx;
+  box-shadow: 1rpx 1rpx 15rpx #ddd;
+  margin: 5rpx;
+}
+
+

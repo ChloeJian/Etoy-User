@@ -1,0 +1,45 @@
+/* 表单容器样式 */  
+form {  
+  background-color: #fff;  
+  border-radius: 10rpx;  
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.5);  
+}  
+  
+/* 表单行样式 */  
+.form-row {  
+  display: flex;  
+  align-items: center;  
+  border: 1rpx solid #eee; 
+}  
+  
+/* 标签样式 */  
+.form-row label {  
+  flex: 1;  
+  text-align: left;  
+  padding-left: 25rpx;
+  margin-right: 30rpx;
+  font-size: 36rpx;  
+  font-weight: 380;
+}  
+  
+/* 输入框样式 */  
+.form-row input {  
+  flex: 3;  
+  height: 90rpx;
+  border-radius: 5rpx;  
+  font-size: 36rpx; 
+  font-weight: 330; 
+} 
+  
+/* 按钮样式 */  
+button {  
+  width: 250rpx; 
+  height: 90rpx; 
+  margin: 30rpx auto;
+  background-color: green;  
+  color: #fff;  
+  border: none;  
+  border-radius: 100rpx;  
+  font-size: 36rpx;  
+  cursor: pointer;  
+} 

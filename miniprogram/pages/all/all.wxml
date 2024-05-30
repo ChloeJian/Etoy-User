@@ -1,0 +1,30 @@
+<view class="container">
+
+<!-- 侧边导航栏 -->
+<view class="sidebar">
+<van-sidebar active-key="{{activeKey}}" bind:change="onChange" >
+  <view wx:for="{{cateList}}">
+    <van-sidebar-item title="{{item.cate_name}}"/>
+  </view>
+</van-sidebar>
+</view>
+
+<!-- 玩具列表 -->
+
+<view class="toyList">
+  <view class="toyItem" wx:for="{{toyList}}" wx:key="{{index}}">
+    <view class="toyImage">
+      <image src="{{item.toy_picurl}}"></image>
+    </view>
+    <view class="toyMsg">
+      <view class="toyMsgItem itemTitle">{{item.toy_name}}  <van-tag plain type="primary">{{item.cate_name}}</van-tag></view>
+      <view class="toyMsgItem">{{item.toy_des}}</view>
+      <view class="toyMsgItem">
+        <button class="cardButton" bindtap="gotoDetail" size="mini" data-t_id="{{item._id}}">
+          进入详情>>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
+</view>

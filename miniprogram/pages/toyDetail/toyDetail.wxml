@@ -1,0 +1,57 @@
+<view class="cardContainer">
+  <!-- 图片容器 -->
+  <view class="imageBox">
+    <image src="{{toy.toy_picurl}}" mode="heightFix"/>
+  </view>
+
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <van-tabs bind:change="onChange">
+      <van-tab title="详情" name="Detail"></van-tab>
+      <van-tab title="评价" name="Comment"></van-tab>
+    </van-tabs>
+  </view>
+
+  <!-- 详情1 -->
+  <view class="detailBox" wx:if="{{status === 'Detail'}}">
+    <view class="cardTitle">{{toy.toy_name}}
+    <van-tag plain type="primary">{{toy.cate_name}}</van-tag>
+    </view>
+    <view class="cardInfo" wx:if="{{collect===null}}"><van-icon name="star-o" size="50rpx" bind:click="collect"/></view>
+    <view class="cardInfo" wx:else><van-icon name="star" size="50rpx" bind:click="collectRemove"/></view>
+    <view class="cardInfo">当前余量：{{toy.toy_current}}件</view>
+    <view class="cardInfo">库存总量：{{toy.toy_total}}件</view>
+    <view class="cardInfo">累计出借：{{toy.toy_playacc}}次</view>
+    <view class="cardInfo">借玩期限：{{toy.toy_maxT}}天</view>
+    <view class="cardInfo">发布时间：{{toy.toy_pub}}</view>
+    <view class="cardInfo">玩具描述：{{toy.toy_des}}</view>
+  </view>
+  <!-- 详情2 -->
+  <view class="btnBox" wx:if="{{status === 'Detail'}}">
+    <view class="btnBoxIn">
+      <button class="btnBorrow" bind:tap="borrowApplyRemove" disabled="{{borrow_return.pass_brw === true}}" wx:if="{{borrow_return.apply_brw === true}}">取消借玩申请</button>
+      <button class="btnBorrow" bind:tap="borrowApply" disabled="{{borrow_return.pass_brw === true}}" wx:else>申请借玩</button>
+    </view>
+    <view class="btnBoxIn">
+      <button class="btnReturn" bind:tap="returnApplyRemove" disabled="{{borrow_return.pass_brw === false  || borrow_return === null}}" wx:if="{{borrow_return.apply_ret === true}}">取消退玩申请</button>
+      <button class="btnReturn" bind:tap="returnApply" disabled="{{borrow_return.pass_brw === false || borrow_return === null}}" wx:else>申请退玩</button>
+    </view>
+  </view>
+
+  <!-- 评价1 -->
+  <view class="commentBox" wx:if="{{status === 'Comment'}}">
+    <view class="commentItem" wx:for="{{commentList}}">
+      <view class="userTitle">{{item.user_name}}</view>
+      <view class="timeInfo">{{item.time_comment}}</view>
+      <view class="commentInfo">{{item.comment}}</view>
+    </view>
+  </view>
+    
+    <!-- 评价2 -->
+    <form bindsubmit="commentSubmit">
+      <view class="commentForm" wx:if="{{borrow_return.pass_ret === true && borrow_return.comment === null}}">
+        <view class="commentInput"><input type="text" name="myComment" placeholder="借还后请输入玩具评价~"/></view>
+        <view class="commentButton"><button form-type="submit" type="primary">发表</button></view>
+      </view>
+    </form>
+  </view>

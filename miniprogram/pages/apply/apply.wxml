@@ -1,0 +1,68 @@
+<!--pages/apply/apply.wxml-->
+<view class="nav-bar">
+  <!-- 导航栏组件 -->
+  <van-tabs bind:change="onChange">
+  <van-tab title="借玩申请" name="Borrow">
+    <view class="list">
+  <scroll-view class="toyMain" scroll-y="true">
+
+<view class="toyItem"  wx:for="{{toyList}}" wx:key="{{index}}">
+
+  <view class="toyImage">
+  <image src="{{item.toy_picurl}}"></image>
+  </view>
+  
+  <view class="toyMsg">
+    <view class="toyMsgItem itemTitle">{{item.toy_name}}  
+    <van-tag plain type="primary">{{item.cate_name}}</van-tag>
+    </view>
+    <view class="toyMsgItem">{{item.toy_des}}</view>
+    <view class="toyMsgItem">
+      <button class="cardButton" bindtap="gotoDetail" size="mini" data-t_id="{{item._id}}">
+      <text wx:if="{{item.br.pass_brw===false&&item.br.time_pass_brw===null}}" style="color: rgb(101, 146, 231);">申请中...>></text>
+      <text wx:if="{{item.br.pass_brw===true&&item.br.apply_ret===false}}" style="color: green">申请成功>></text>
+      <text wx:if="{{item.br.pass_brw===false&&item.br.time_pass_brw!==null}}" style="color: red;">申请失败>></text>
+      <text wx:if="{{item.br.pass_brw===true&&item.br.apply_ret===true}}" style="color: grey;">流程结束>></text>
+      </button>
+    </view>
+  </view>
+
+</view>
+
+</scroll-view>
+</view>
+  </van-tab>
+
+
+  <van-tab title="退玩申请" name="Return">
+    <view class="list">
+  <scroll-view class="toyMain" scroll-y="true">
+
+<view class="toyItem"  wx:for="{{toyList}}" wx:key="{{index}}">
+
+  <view class="toyImage">
+  <image src="{{item.toy_picurl}}"></image>
+  </view>
+  
+  <view class="toyMsg">
+    <view class="toyMsgItem itemTitle">{{item.toy_name}}  
+    <van-tag plain type="primary">{{item.cate_name}}</van-tag>
+    </view>
+    <view class="toyMsgItem">{{item.toy_des}}</view>
+    <view class="toyMsgItem">
+      <button class="cardButton" bindtap="gotoDetail" size="mini" data-t_id="{{item._id}}">
+      <text wx:if="{{item.br.pass_ret===false&&item.br.time_pass_ret===null}}" style="color: rgb(101, 146, 231);">申请中...>></text>
+      <text wx:if="{{item.br.pass_ret===true&&item.br.comment===null}}" style="color: green">申请成功>></text>
+      <text wx:if="{{item.br.pass_ret===false&&item.br.time_pass_ret!==null}}" style="color: red;">申请失败>></text>
+      <text wx:if="{{item.br.pass_ret===true&&item.br.comment!==null}}" style="color: grey;">流程结束>></text>
+      </button>
+    </view>
+  </view>
+
+</view>
+
+</scroll-view>
+</view>
+  </van-tab>
+</van-tabs>
+</view>
